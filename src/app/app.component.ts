@@ -59,6 +59,7 @@ export class AppComponent implements OnInit {
   guardar(): void {
     this.ServicioClientes.guardarCliente(this.formularioCliente.value).subscribe(resp => {
       this.formularioCliente.reset();
+      this.clientes = this.clientes.filter((cliente: { id: any; })=> resp.id!==cliente.id)
       this.clientes.push(resp);
     },
       error => {
@@ -67,7 +68,7 @@ export class AppComponent implements OnInit {
     )
   }
 
-  borrar(cliente:any): void {
+  borrar(cliente:any){
     this.ServicioClientes.borrarCliente(cliente.idenficacion).subscribe(resp => {
      if(resp){
        this.clientes.pop(cliente);
@@ -80,5 +81,17 @@ export class AppComponent implements OnInit {
     )
   }
 
+  editar(cliente:any){
+    this.formularioCliente.setValue({
+      idenficacion: cliente.idenficacion,
+      nombres: cliente.nombres,
+      apellidos: cliente.apellidos,
+      correo_electronico: cliente.correo_electronico,
+      telefono: cliente.telefono,
+      fecha_nacimiento: cliente.fecha_nacimiento,
+      ocupacion: cliente.ocupacion,
+      ciudad: cliente.ciudad,
+    })
+  }
 
 }

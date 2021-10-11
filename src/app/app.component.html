@@ -1,6 +1,6 @@
 <div class="page-default col-sm-12 col-xs-12">
 
-  <h1>Titulo principal</h1>
+  <h1>PRACTICA DESARROLLO DE APLICACIÓN USANDO ANGULAR COMO FRONT-END Y JAVA SPRING MAVEN COMO BACK-END</h1>
 
   <div class="form-create col-sm-10 padding-none col-xs-12">
     <form [formGroup]="formularioCliente" class="formulario-cliente" (ngSubmit)="guardar()">
@@ -81,7 +81,7 @@
           <td>{{ item.correo_electronico }}</td>
           <td>{{ item.ciudad.nombre_ciudad }}</td>
           <td>
-            <button type="button" class="btn btn-warning">Editar</button>
+            <button type="button" class="btn btn-warning" (click)="editar(item)">Editar</button>
             <button type="button" class="btn btn-danger" (click)="borrar(item)">Eliminar</button>
           </td>
         </tr>
