@@ -1,43 +1,75 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
 h1 {
-    color: rgb(104, 16, 16);
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 3em;
-    line-height: 1.5em;
-    letter-spacing: 10px
+  color: rgb(104, 16, 16);
+  text-align: center;
+  font-size: 3em;
+  line-height: 1.5em;
+  letter-spacing: 10px
 }
 
-.page-default{
-    padding: 2%;
+.page-default {
+  padding: 2%;
 }
 
-.form-create{
-    margin: 5%;
-}
-
-.table-visualization{
+.form-create {
     margin: 5%;
     padding: 1%;
 }
 
-.formulario-cliente{
-    margin: 5%;
-    padding: 1%;
+.table-visualization {
+  margin: 5%;
+  padding: 1%;
 }
 
-div.form-group{
-    margin: 2%;
+.formulario-cliente {
+  
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
-div.guardar{
-    text-align: center;
+div.form-group {
+  margin: 2%;
+}
+
+div.guardar {
+  text-align: center;
 }
 
 td {
-    text-align: center;
+  text-align: center;
 }
 
-.btn{
-    margin: 2%;
+.btn {
+  margin: 2%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-form {
+  
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
 }

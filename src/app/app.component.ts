@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { CiudadesService } from './servicios/ciudades/ciudades.service';
 import { ClientesService } from './servicios/clientes/clientes.service';
+import {map, startWith} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { OcupacionesService } from './servicios/ocupaciones/ocupaciones.service';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
   selector: 'app-root',
@@ -10,28 +14,38 @@ import { ClientesService } from './servicios/clientes/clientes.service';
 })
 
 
-export class AppComponent implements OnInit {
 
+export class AppComponent implements OnInit, ErrorStateMatcher {
 
   formularioCliente: FormGroup;
   ciudades: any;
   clientes: any;
-
-
+  ocupaciones: any;
+ 
+  
+  
   constructor(
     public form: FormBuilder,
     public ServicioCiudades: CiudadesService,
-    public ServicioClientes: ClientesService
+    public ServicioClientes: ClientesService,
+    public ServicioOcupaciones: OcupacionesService
   ) {
 
   }
+
+
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+
 
   ngOnInit(): void {
     this.formularioCliente = this.form.group({
       idenficacion: ['', Validators.required],
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
-      correo_electronico: ['', Validators.required],
+      correo_electronico: ['', [Validators.required, Validators.email]],
       telefono: ['', Validators.required],
       fecha_nacimiento: ['', Validators.required],
       ocupacion: ['', Validators.required],
@@ -46,6 +60,14 @@ export class AppComponent implements OnInit {
       }
     );
     
+    this.ServicioOcupaciones.getAllOcupaciones().subscribe(resp => {
+      this.ocupaciones = resp;
+    },
+      error => {
+        console.error(error)
+      }
+    );
+
     this.ServicioClientes.getAllClientes().subscribe(resp => {
       this.clientes = resp;
     },
@@ -54,7 +76,11 @@ export class AppComponent implements OnInit {
       }
     );
 
+   
   }
+
+
+  
 
   guardar(): void {
     this.ServicioClientes.guardarCliente(this.formularioCliente.value).subscribe(resp => {
