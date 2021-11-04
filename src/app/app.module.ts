@@ -17,10 +17,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { FormCRUDCredifamiliaComponent } from './form-crudcredifamilia/form-crudcredifamilia.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HeaderComponent,
+    FormCRUDCredifamiliaComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [
     

@@ -1,29 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
-import { CiudadesService } from './servicios/ciudades/ciudades.service';
-import { ClientesService } from './servicios/clientes/clientes.service';
+import { CiudadesService } from '../servicios/ciudades/ciudades.service';
+import { ClientesService } from '../servicios/clientes/clientes.service';
 import {map, startWith} from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { OcupacionesService } from './servicios/ocupaciones/ocupaciones.service';
+import { OcupacionesService } from '../servicios/ocupaciones/ocupaciones.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-form-crudcredifamilia',
+  templateUrl: './form-crudcredifamilia.component.html',
+  styleUrls: ['./form-crudcredifamilia.component.css']
 })
 
+export class FormCRUDCredifamiliaComponent implements OnInit, ErrorStateMatcher {
 
-
-export class AppComponent implements OnInit {
-
-  constructor(){
-
-  }
-
-  ngOnInit(): void {
-  }
-/*
   formularioCliente: FormGroup;
   ciudades: any;
   clientes: any;
@@ -123,5 +114,5 @@ export class AppComponent implements OnInit {
       ciudad: cliente.ciudad,
     })
   }
-*/
+
 }

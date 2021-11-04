@@ -1,0 +1,62 @@
+<div class="page-default col-sm-12 col-xs-12">  
+    <div class="form-create col-sm-10 padding-none col-xs-12">
+      <h1>Create User Admin</h1>
+      <form [formGroup]="formAdminCreate" class="formulario-cliente col-sm-8 col-xs-12" (ngSubmit)="crearUserAdmin()">
+        <div class="form-group">
+          <mat-form-field mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Rol</mat-label>
+            <input matInput type="text" formControlName="rol" class="form-control">
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Nombre usuario</mat-label>
+                  <input matInput type="text" formControlName="user" class="form-control">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput type="text" formControlName="pass" class="form-control">
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form-group guardar">
+          <button type="submit" mat-raised-button color="success">Crear usuario admin</button>
+        </div>
+      </form>
+    </div>
+    <div class="form-create col-sm-10 padding-none col-xs-12">
+        <h1>Login User Admin</h1>
+        <form [formGroup]="formLoginAdmin" class="formulario-cliente col-sm-8 col-xs-12" (ngSubmit)="loginUserAdmin()">
+              
+          <div class="form-group">
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nombre usuario</mat-label>
+                    <input matInput type="text" formControlName="user" class="form-control">
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="text" formControlName="password" class="form-control">
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="form-group guardar">
+            <button type="submit" mat-raised-button color="success">Log in</button>
+          </div>
+        </form>
+      </div>
+</div>
