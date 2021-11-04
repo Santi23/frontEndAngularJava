@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, ErrorStateMatcher {
   ciudades: any;
   clientes: any;
   ocupaciones: any;
- 
+  currentTimeInMilliseconds=Date.now();
   
   
   constructor(
@@ -78,9 +78,6 @@ export class AppComponent implements OnInit, ErrorStateMatcher {
 
    
   }
-
-
-  
 
   guardar(): void {
     this.ServicioClientes.guardarCliente(this.formularioCliente.value).subscribe(resp => {
