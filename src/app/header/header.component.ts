@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  titleHeader="APLICACIÓN  ANGULAR (FRONT-END) - JAVA SPRING MAVEN (BACK-END)";
+
   constructor() { }
 
   ngOnInit(): void {

@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import { OcupacionesService } from './servicios/ocupaciones/ocupaciones.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,8 +31,8 @@ export class AppComponent implements OnInit {
   clientes: any;
   ocupaciones: any;
   currentTimeInMilliseconds=Date.now();
-  
-  
+
+
   constructor(
     public form: FormBuilder,
     public ServicioCiudades: CiudadesService,
@@ -66,7 +68,7 @@ export class AppComponent implements OnInit {
         console.error(error)
       }
     );
-    
+
     this.ServicioOcupaciones.getAllOcupaciones().subscribe(resp => {
       this.ocupaciones = resp;
     },
@@ -83,7 +85,7 @@ export class AppComponent implements OnInit {
       }
     );
 
-   
+
   }
 
   guardar(): void {

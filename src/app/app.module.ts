@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 // ANGULAR MATERIAL
 import {MatCardModule} from '@angular/material/card';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -46,7 +47,7 @@ import { FormCRUDCredifamiliaComponent } from './form-crudcredifamilia/form-crud
     AppRoutingModule
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })
